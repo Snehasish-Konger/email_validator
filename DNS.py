@@ -3,6 +3,8 @@ import re
 import dns.resolver
 import smtplib
 import socket
+import os
+
 
 app = Flask(__name__)
 
@@ -101,4 +103,5 @@ def verify_email():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002)
+    port = int(os.environ.get("PORT", 5000))  # Use the port assigned by Render or default to 5000 for local testing
+    app.run(host='0.0.0.0', port=port)
