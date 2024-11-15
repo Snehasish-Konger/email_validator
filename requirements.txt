@@ -1,4 +1,2 @@
 Flask
 dnspython
-smtplib
-socket
